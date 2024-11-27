@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3572ef;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+  gap: 12px;
+  width: 50%;
+  min-height: 80vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: white;
+}
+
+form h1 {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  gap: 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row input,
+.form-row select {
+  height: 24px;
+  outline: none;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  border: 2px solid #3572ef;
+}
+
+form button {
+  width: 100px;
+  padding: 12px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  background-color: #3572ef;
+  transition: 0.2s;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+}
+
+.result {
+  margin: 12px 0;
+  font-weight: bolder;
+}
+
+form button:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 1024px) {
+  form {
+    gap: 20px;
+    width: 70%;
+  }
+
+  .form-row {
+    gap: 10px;
+  }
+
+  .form-row label {
+    font-size: 20px;
+  }
+
+  .form-row input,
+  .form-row select {
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .result {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    width: 100%;
+  }
+
+  .form-row input,
+  .form-row select {
+    height: 32px;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediksi Biaya Asuransi Kesehatan</title>
+    <link rel="icon" href="{{url_for('static', filename='images/logo.png')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" />
+  </head>
+  <body>
+    <form action="{{url_for('prediction')}}" method="POST">
+      <h1>Masukkan Data Anda</h1>
+      <div class="form-row">
+        <label for="umur">Umur</label>
+        <input type="number" name="umur" id="umur" required />
+      </div>
+      <div class="form-row">
+        <label for="jenis-kelamin">Jenis Kelamin</label>
+        <select name="jenis-kelamin" id="jenis-kelamin" required>
+          <option value="0">Perempuan</option>
+          <option value="1">Laki-laki</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="bmi">BMI</label>
+        <input type="number" step="any" name="bmi" id="bmi" required />
+      </div>
+      <div class="form-row">
+        <label for="jumlah-anak">Jumlah Anak</label>
+        <input type="number" name="jumlah-anak" id="jumlah-anak" required />
+      </div>
+      <div class="form-row">
+        <label for="perokok">Apakah Anda Perokok?</label>
+        <select name="perokok" id="perokok" required>
+          <option value="1">Iya</option>
+          <option value="0">Tidak</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="wilayah">Wilayah</label>
+        <select name="wilayah" id="wilayah" required>
+          <option value="0">Timur Laut</option>
+          <option value="2">Tenggara</option>
+          <option value="3">Barat Daya</option>
+          <option value="1">Barat Laut</option>
+        </select>
+      </div>
+      {% if result %}
+      <p class="result">Hasil Prediksi Biaya Asuransi Kesehatan: ${{"%.2f" % result}}</p>
+      {% else %}
+      <p class="result">Hasil Prediksi Biaya Asuransi Kesehatan:</p>
+      {% endif %}
+      <button type="submit">Prediksi</button>
+    </form>
+  </body>
+</html>
